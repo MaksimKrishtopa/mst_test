@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Prata";
+    src: url(/fonts/Prata-Regular.woff);
+}
+
+
+
+header {
+    background: #222222;
+}
+
+header a {
+    color: #fff;
+}
+
+
+.header__container {
+    display: flex;
+    align-items: center;
+    padding: 45px 0 0 165px;
+    gap: 210px;
+}
+
+.logo {
+    font-family: "Prata";
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+nav {
+    font-size: 16px;
+    font-style: italic;
+    font-family: "Arial";
+}
+
+.nav__container {
+    display: flex;
+    gap: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+.welcome__section {
+    background: #222222;
+}
