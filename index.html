@@ -11,22 +11,131 @@
     <header>
         <div class="header__container">
             <div class="logo">
-                <a href="#">Vito+</a>
+                <a href="#">Vito<span class="plus">+</span></a>
             </div>
+                       
             <nav>
                 <div class="nav__container">
-                    <a href="#">Services</a>
-                    <a href="#">Appointment</a>
-                    <a href="#">About Us</a>
+                    <a href="#welcome__section">Services</a>
+                    <a href="#appointment__section">Appointment</a>
+                    <a href="#qualities__section">About Us</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="welcome__section">
-            
+        <section id="welcome__section" class="welcome__section">
+            <div class="welcome__section-container">
+                <div class="welcome__section-info">
+                    <h1>MODERN MEDICINE FOR YOU</h1>
+                    <p>
+                        Care in everything
+                    </p>
+                    <ul>
+                        <li><img src="/img/list_icon.svg" alt="✓"><div>more than <span>10</span> years in the medical field</div></li>
+                        <li><img src="/img/list_icon.svg" alt="✓"><div>we spend over <span>$5</span> million on equipment</div></li>
+                        <li><img src="/img/list_icon.svg" alt="✓"><div><span>10000+</span> satisfied clients</div></li>
+                    </ul>
+                    <button>APPOINTMENT</button>
+                </div>
+            </div>
+            <img class="welcome__section-img" src="/img/welcome__banner-img.webp" alt="welcome__banner">
+        </section>
+
+        <section id="qualities__section" class="qualities__section">
+            <div class="qualities__section-container">
+                <img src="/img/qualities-img1.webp" alt="high-qualities">
+                <div class="qualities__section-info">
+                    <ul>
+                        <li><img src="/img/list__qualities-icon.svg" alt="quality">24/7 Availability with access to consultations and care at any time, especially in emergencies or for people with limited time.</li>
+                        <li><img src="/img/list__qualities-icon.svg" alt="quality">Highly Qualified Specialists with experienced doctors in various fields providing accurate diagnoses and effective treatments.</li>
+                        <li><img src="/img/list__qualities-icon.svg" alt="quality">Data Security and Confidentiality with patient data protected by the latest security technologies, ensuring privacy.</li>
+                        <li><img src="/img/list__qualities-icon.svg" alt="quality">High-Quality Equipment with the clinic using state-of-the-art medical equipment to provide the best care.</li>
+                        
+                    </ul>
+                    <button>APPOINTMENT</button>
+                </div>
+                <img src="/img/qualities-img2.webp" alt="high-qualities">
+            </div>
+        </section>
+
+        <section id="appointment__section" class="appointment__section">
+            <div class="appointment__section-container">
+                <div class="appointment__section-left">
+                    <h2>Make an appointment now!</h2>
+                    <form action="#" method="POST">
+                        <div>
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+                    
+                        <div>
+                            <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        </div>
+                    
+                        <div>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        </div>
+
+                        <div class="checkbox__container">
+                            <label for="privacy">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkbox"></span> I accept the Privacy policy
+                            </label>
+                        </div>
+                        
+
+                            <button type="submit">Submit Form</button>
+                    </form>
+                </div>
+
+                <div class="appointment__section-right">
+                    <img src="/img/appointment__left-img.png" alt="Doctor-img">
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer>
+            <div class="footer__top">
+                <nav>
+                    <div class="nav__container">
+                        <a href="#welcome__section">Services</a>
+                        <a href="#appointment__section">Appointment</a>
+                        <a href="#qualities__section">About Us</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+
+                <div>
+                    <div class="logo">
+                        <a href="#">Vito<span class="plus">+</span></a>
+                    </div>
+
+                    <p>© 2025, Copyright.</p>
+                </div>
+
+                <div>
+                    <div class="footer__socials">
+                        <a href="#"><img src="/img/footer__nav-icon1.svg" alt="social1"></a>
+                        <a href="#"><img src="/img/footer__nav-icon2.svg" alt="social2"></a>
+                        <a href="#"><img src="/img/footer__nav-icon3.svg" alt="social3"></a>
+                        <a href="#"><img src="/img/footer__nav-icon4.svg" alt="social4"></a>
+                        <a href="#"><img src="/img/footer__nav-icon5.svg" alt="social5"></a>
+                        <a href="#"><img src="/img/footer__nav-icon6.svg" alt="social6"></a>
+                    </div>
+                    <a class="footer__bottom-privacypolicy" href="#">Privacy policy</a>
+                </div>
+
+                <div>
+                    <button>APPOINTMENT</button>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+    </footer>
+
+
+    <script src="/scripts/script.js"></script>
 </body>
 </html>

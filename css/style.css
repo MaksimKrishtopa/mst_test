@@ -3,28 +3,92 @@
     src: url(/fonts/Prata-Regular.woff);
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 header {
-    background: #222222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, 0);;
+    transition: background-color 0.4s ease;
+    transition: box-shadow 0.4s ease;
 }
+
+header.scrolled {
+    background-color: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
 
 header a {
     color: #fff;
 }
 
-
 .header__container {
     display: flex;
     align-items: center;
-    padding: 45px 0 0 165px;
+    padding: 0 0 0 165px;
     gap: 210px;
 }
+
 
 .logo {
     font-family: "Prata";
     font-size: 36px;
     text-transform: uppercase;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo a {
+    color: white; 
+    text-decoration: none;
+    position: relative;
+    transition: text-shadow 0.3s ease;
+}
+
+
+.plus {
+    font-size: 48px;
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+
+.plus.rotate {
+    animation: rotatePlus 1s forwards; 
+}
+
+@keyframes rotatePlus {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+.merci {
+    animation: textShimmer 1s forwards;
+}
+
+@keyframes textShimmer {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0); 
+    }
 }
 
 nav {
@@ -38,15 +102,394 @@ nav {
     gap: 30px;
 }
 
+.nav__container a {
+    color: #fff; 
+    position: relative; 
+}
 
+.nav__container a::after {
+    content: ''; 
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.4s ease; 
+}
 
-
-
-
-
-
-
+.nav__container a:hover::after {
+    width: 100%;
+}
 
 .welcome__section {
     background: #222222;
+    color: #fff;
+    padding: 200px 0 0 165px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    text-wrap: wrap;
+}
+
+.welcome__section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome__section-info {
+    max-width: 525px;
+    flex: 1;
+}
+
+.welcome__section-info h1 {
+    font-size: 80px;
+    font-family: "Prata";
+    line-height: 1.2;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.welcome__section-info p {
+    font-size: 50px;
+    font-family: "Arial";
+    line-height: 1.2;
+    padding-top: 10px;
+}
+
+.welcome__section-info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 65px;
+}
+
+.welcome__section-info li {
+    font-family: "Arial";
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background-color: rgba(40, 40, 41, .7);
+}
+
+.welcome__section-info li img {
+    width: 39px;
+}
+
+.welcome__section-info li div {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome__section-info li div span {
+    font-size: 40px;
+    font-family: "Prata";
+}
+
+.welcome__section-info button {
+    background-color: #fff;
+    color: #222222;
+    padding: 32px 52px;
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Arial";
+    margin: 40px 0 50px 0;
+    line-height: 1.5;
+    transition: box-shadow 0.3s ease; 
+
+}
+
+.welcome__section-info button:hover {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); 
+}
+
+
+.welcome__section-img {
+    width: 35%;
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.qualities__section {
+    background-color: #282829;
+    padding-top: 100px;
+}
+
+.qualities__section-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.qualities__section-container > img {
+    width: 30%;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+.qualities__section-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.qualities__section-info ul {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.qualities__section-info li {
+    font-size: 24px;
+    line-height: 1.5;
+    font-family: "Arial";
+    color: #fff;
+    display: flex;
+    align-items: start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #55565A;
+}
+
+.qualities__section-info li:last-child {
+    border-bottom: none;
+}
+
+.qualities__section-info li > img {
+    width: 58px;
+    margin-right: 20px;
+}
+
+.qualities__section-container button {
+    background-color: #fff;
+    color: #222222;
+    padding: 32px 52px;
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Arial";
+    line-height: 1.5;
+    transition: box-shadow 0.3s ease; 
+    margin-top: 50px;
+}
+
+.qualities__section-container button:hover {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); 
+}
+
+.appointment__section {
+    background-color: #282829;
+    padding: 100px 0;
+
+}
+
+.appointment__section-container {
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 0 165px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.appointment__section-left {
+    padding: 75px 0 70px 135px;
+}
+
+
+.appointment__section-left h2 {
+    font-family: "Prata";
+    font-size: 54px;
+    color: #38535D;
+    line-height: 1.1;
+}
+
+
+.appointment__section-left form {
+    margin-top: 50px;
+}
+
+.appointment__section-left form input {
+    font-size: 24px;
+    font-family: "Arial";
+    line-height: 1.5;
+    padding: 14px 38px;
+    border: 2px solid #D6D6D6;
+    border-radius: 4px;
+    margin-bottom: 13px;
+    width: 100%;
+}
+
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox__container {
+    display: flex;
+    margin: 26px 0;
+    align-items: center;
+}
+
+label {
+    position: relative;
+    padding-left: 40px; 
+    font-size: 19px;
+    cursor: pointer;
+    color: #55565A;
+    font-family: "Arial";
+    line-height: 1.5;
+}
+
+label span {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #405D65; 
+    border-radius: 4px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+
+input[type="checkbox"]:checked + span::after {
+    content: '✔︎';
+    color: #405D65;
+    position: absolute;
+    left: 1px;
+    top: -2px;
+    border: none;   
+    font-size: 20px;               
+}
+
+
+input[type="checkbox"]:checked + span { 
+    border: none;    
+}
+
+.appointment__section-left form input::placeholder {
+    color: #55565A;
+}
+
+.appointment__section-left form button {
+    font-size: 24px;
+    color: #fff;
+    background-color: #282829;
+    padding: 32px 20px;
+    font-family: "Arial";
+    line-height: 1.5;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.appointment__section-right {
+    width: 35%;
+    background-image: url(/img/appointment__left-bg--img.webp);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+}
+
+.appointment__section-right img {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+footer {
+    background-color: #222222;
+}
+
+footer a {
+    color: inherit;
+}
+
+.footer__top {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #D5C9BE;
+    border-bottom: 2px solid #D5C9BE;
+}
+
+.footer__top > nav > .nav__container a {
+    font-size: 20px;
+}
+
+.footer__bottom {
+    padding: 45px 180px 55px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.footer__bottom > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__bottom > div > .logo{
+    padding-bottom: 30px;
+}
+
+.footer__bottom > div:first-child {
+    font-size: 20px;
+    font-family: "Arial";
+    line-height: 1.5;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 32px;
+}
+
+.footer__bottom-privacypolicy {
+    padding-top: 60px;
+    font-size: 20px;
+    font-family: "Arial";
+    line-height: 1.5;
+    color: #D5C9BE;
+}
+
+.footer__bottom > div:last-child {
+    align-items: end;
+}
+
+.footer__bottom > div:last-child button {
+    font-style: italic;
+    font-size: 20px;
+    font-family: "Arial";
+    line-height: 1.5;
+    color: #222222;
+    background-color: #fff;
+    padding: 32px 52px;
+    border-radius: 4px;
+}
+
+.footer__bottom > div:last-child > a {
+    padding-top: 30px;
+    font-size: 20px;
+    font-family: "Arial";
+    line-height: 1.5;
+    color: #D5C9BE;
 }
