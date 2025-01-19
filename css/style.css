@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Prata";
-    src: url(/fonts/Prata-Regular.woff);
+    src: url(fonts/Prata-Regular.woff);
 }
 
 html {
@@ -415,7 +415,7 @@ input[type="checkbox"]:checked + span {
 
 .appointment__section-right {
     width: 35%;
-    background-image: url(/img/appointment__left-bg--img.webp);
+    background-image: url(img/appointment__left-bg--img.webp);
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -623,7 +623,7 @@ footer a {
 
     .appointment__section-right {
         width: 42%;
-        background-image: url(/img/appointment__left-bg--img.webp);
+        background-image: url(img/appointment__left-bg--img.webp);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -734,7 +734,7 @@ footer a {
 
     .appointment__section-right {
         width: 45%;
-        background-image: url(/img/appointment__left-bg--img.webp);
+        background-image: url(img/appointment__left-bg--img.webp);
         background-position: center center; 
         background-repeat: no-repeat;
         background-size: cover;
