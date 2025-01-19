@@ -199,12 +199,13 @@ nav {
     font-family: "Arial";
     margin: 40px 0 50px 0;
     line-height: 1.5;
-    transition: box-shadow 0.3s ease; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 
 }
 
 .welcome__section-info button:hover {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); 
+    transform: translateY(-3px); /* Подъем кнопки */
 }
 
 
@@ -236,7 +237,7 @@ nav {
 
 .qualities__section-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     padding: 0 50px;
 }
@@ -276,12 +277,13 @@ nav {
     font-weight: bold;
     font-family: "Arial";
     line-height: 1.5;
-    transition: box-shadow 0.3s ease; 
-    margin-top: 50px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    margin-top: 100px;
 }
 
 .qualities__section-container button:hover {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); 
+    transform: translateY(-3px); /* Подъем кнопки */
 }
 
 .appointment__section {
@@ -390,6 +392,16 @@ input[type="checkbox"]:checked + span {
     line-height: 1.5;
     width: 100%;
     text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.appointment__section-left form button:hover {
+    transform: translateY(-3px); /* Подъем кнопки */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Внешняя и внутренняя тени */
 }
 
 .appointment__section-right {
